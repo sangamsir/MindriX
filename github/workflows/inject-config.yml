@@ -14,8 +14,9 @@ jobs:
         run: |
           echo "window.MX_OS_REST_KEY = \"${{ secrets.ONESIGNAL_REST_KEY }}\";" > mx-config.js
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
+          keep_files: true
